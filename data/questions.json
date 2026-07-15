@@ -1,0 +1,368 @@
+{
+  "p03": {
+    "stepId": "p03",
+    "type": "drag",
+    "primitive": "drag-formula",
+    "prompt": "把数字卡片拖到横线上，列出更快的乘法算式：",
+    "hint": "黑板上有 3 行，每行 4 只兔子。",
+    "tiles": ["3", "4", "5", "12", "7"],
+    "slots": [
+      { "id": "a", "accept": ["3", "4"] },
+      { "id": "b", "accept": ["3", "4"] },
+      { "id": "c", "accept": ["12"] }
+    ],
+    "template": "{a} × {b} = {c}",
+    "correct": { "product": 12, "c": "12" },
+    "feedback": { "correct": "太棒了！4×3=12，用乘法算得又快又准！", "incorrect": "再想想，3 行每行 4 只，是几个 4 相加呢？" },
+    "explanation": "4＋4＋4＝12，写成乘法就是 4×3＝12（只）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": true },
+    "score": 5
+  },
+  "p04": {
+    "stepId": "p04",
+    "type": "hotspot",
+    "prompt": "先在售货机上点出正确的价格，再算出总价。",
+    "hint": "点击‘篮球’和‘鸡腿’的价格标签。",
+    "magnifier": true,
+    "hotspots": [
+      { "id": "snack", "label": "零食 5元/袋", "correct": false, "x": 16, "y": 29, "w": 10, "h": 14 },
+      { "id": "chicken", "label": "鸡腿 7元/个", "correct": true, "x": 27, "y": 29, "w": 10, "h": 14 },
+      { "id": "drink", "label": "饮料 3元/杯", "correct": false, "x": 37, "y": 29, "w": 9, "h": 14 },
+      { "id": "beer", "label": "啤酒 6元/杯", "correct": false, "x": 46, "y": 29, "w": 9, "h": 14 },
+      { "id": "ball", "label": "篮球 8元/个", "correct": true, "x": 16, "y": 44, "w": 10, "h": 13 },
+      { "id": "goggles", "label": "泳镜 15元/个", "correct": false, "x": 27, "y": 44, "w": 10, "h": 13 },
+      { "id": "cap", "label": "帽子 50元/个", "correct": false, "x": 37, "y": 44, "w": 10, "h": 13 },
+      { "id": "apple", "label": "苹果树 50元/棵", "correct": false, "x": 18, "y": 58, "w": 16, "h": 15 },
+      { "id": "lemon", "label": "柠檬树 20元/棵", "correct": false, "x": 36, "y": 58, "w": 16, "h": 15 }
+    ],
+    "requiredHotspots": ["ball", "chicken"],
+    "followUp": {
+      "type": "fill-blank",
+      "prompt": "雁班长买 5 个篮球和 7 个鸡腿，一共花：",
+      "blanks": [ { "id": "total", "suffix": "元", "answers": ["89"] } ]
+    },
+    "feedback": { "correct": "答对啦！5×8＋7×7＝40＋49＝89（元）。", "incorrect": "先找准价格：篮球 8 元、鸡腿 7 元，再算总价哦。" },
+    "explanation": "篮球 5×8＝40 元，鸡腿 7×7＝49 元，一共 40＋49＝89（元）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": false },
+    "score": 5
+  },
+  "p05": {
+    "stepId": "p05",
+    "type": "matching",
+    "prompt": "把每道小题和它需要的条件连起来：",
+    "left": [
+      { "id": "q1", "text": "① 每天提供4条河豚船，＿＿，一周最多多少同学乘河豚船？" },
+      { "id": "q2", "text": "② 海洋馆组织划船大赛，＿＿，一共需要准备多少张积分卡？" }
+    ],
+    "right": [
+      { "id": "A", "text": "A 海洋馆里一共有42只船" },
+      { "id": "B", "text": "B 河豚船选3人每人奖6张，大马哈船选6人每人奖4张" },
+      { "id": "C", "text": "C 每条河豚船最多乘坐2个人" }
+    ],
+    "correct": { "q1": "C", "q2": "B" },
+    "feedback": { "correct": "连对了！①4×2×7＝56 人；②3×6＋6×4＝42 张。", "incorrect": "看看每道题缺少什么信息，再连一次。" },
+    "explanation": "① 用 C：4×2×7＝56（人）；② 用 B：3×6＋6×4＝18＋24＝42（张）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": true },
+    "score": 5
+  },
+  "p07": {
+    "stepId": "p07",
+    "type": "sequence",
+    "prompt": "把‘平均分’的思考步骤按顺序排好：",
+    "items": [
+      { "id": "s1", "text": "一共有 18 根胡萝卜" },
+      { "id": "s2", "text": "每只兔子分到 3 根" },
+      { "id": "s3", "text": "用连减：18－3－3－3－3－3－3＝0" },
+      { "id": "s4", "text": "一共减了 6 次" },
+      { "id": "s5", "text": "列式 18÷3＝6，可以分给 6 只兔子" }
+    ],
+    "correct": ["s1", "s2", "s3", "s4", "s5"],
+    "feedback": { "correct": "顺序正确！平均分就是 18÷3＝6（只）。", "incorrect": "再理一理：先看总数，再看每份，最后列除法。" },
+    "explanation": "连续减去 6 个 3 得到 0，所以 18÷3＝6（只兔子）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": true },
+    "score": 5
+  },
+  "p08": {
+    "stepId": "p08",
+    "type": "matching",
+    "prompt": "为每道小题选择合适的条件并连线：",
+    "left": [
+      { "id": "q1", "text": "① 小老鼠排队领大米，＿＿，每只得9袋，可以分给多少只？" },
+      { "id": "q2", "text": "② 一共41个苹果，大毛偷吃5个后剩下平均分，＿＿，每盘多少个？" }
+    ],
+    "right": [
+      { "id": "A", "text": "A 共 63 袋大米" },
+      { "id": "B", "text": "B 共 9 个盘子" },
+      { "id": "C", "text": "C 共 6 个篮子" }
+    ],
+    "correct": { "q1": "A", "q2": "B" },
+    "feedback": { "correct": "连对了！①63÷9＝7 只；②（41－5）÷9＝4 个。", "incorrect": "想想每道题要分的是什么、分成几份。" },
+    "explanation": "① 用 A：63÷9＝7（只）；② 用 B：（41－5）÷9＝36÷9＝4（个）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": true },
+    "score": 5
+  },
+  "p09": {
+    "stepId": "p09",
+    "type": "fill-blank",
+    "prompt": "13个和尚吃饭：7个大和尚每人吃2个馒头，6个小和尚每2人吃1个馒头。一共吃了几个馒头？",
+    "blanks": [ { "id": "total", "suffix": "个馒头", "answers": ["17"] } ],
+    "feedback": { "correct": "厉害！7×2＋6÷2＝14＋3＝17（个）。", "incorrect": "分开算：大和尚 7×2，小和尚 6÷2，再相加。" },
+    "explanation": "大和尚 7×2＝14 个，小和尚 6÷2＝3 个，一共 14＋3＝17（个）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": false },
+    "score": 5
+  },
+  "p10": {
+    "stepId": "p10",
+    "type": "multi",
+    "prompt": "读一读知识点睛，选出所有正确的说法（多选）：",
+    "options": [
+      { "id": "o1", "text": "乘法就是求几个相同加数的和" },
+      { "id": "o2", "text": "除法用来平均分东西，而且很公平" },
+      { "id": "o3", "text": "乘法是用来平均分东西的" },
+      { "id": "o4", "text": "解决实际问题要先审题找问题，再找条件、列式" }
+    ],
+    "correct": ["o1", "o2", "o4"],
+    "feedback": { "correct": "全部选对！乘法求和、除法平均分，解题三步走。", "incorrect": "再读一遍：乘法求‘一共’，除法才是‘平均分’。" },
+    "explanation": "乘法＝相同加数求和（求一共）；除法＝平均分；解题：①审题②找条件③列式。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": true },
+    "score": 5
+  },
+  "p12": {
+    "stepId": "p12",
+    "type": "choice",
+    "prompt": "公园里有7种颜色的花，每种9朵。7种花一共有多少朵？",
+    "options": [
+      { "id": "o1", "text": "54 朵" },
+      { "id": "o2", "text": "63 朵" },
+      { "id": "o3", "text": "72 朵" },
+      { "id": "o4", "text": "79 朵" }
+    ],
+    "correct": "o2",
+    "feedback": { "correct": "正确！7×9＝63（朵）。", "incorrect": "7 个 9 相加，就是 7×9。" },
+    "explanation": "7×9＝63（朵）。",
+    "retryPolicy": { "maxRetries": 2, "autoResetOnFail": false },
+    "score": 5
+  },
+  "p13": {
+    "stepId": "p13",
+    "type": "fill-blank",
+    "prompt": "小兔摘了24朵花，平均装到3个篮子。每个篮子装多少朵？",
+    "blanks": [ { "id": "a", "suffix": "朵", "answers": ["8"] } ],
+    "feedback": { "correct": "对啦！24÷3＝8（朵）。", "incorrect": "平均分用除法：24÷3。" },
+    "explanation": "24÷3＝8（朵）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": false },
+    "score": 5
+  },
+  "p14": {
+    "stepId": "p14",
+    "type": "fill-blank",
+    "prompt": "活动室有45个篮球和27个足球，把足球平均分给9个小组。每组分几个足球？",
+    "hint": "只分足球，篮球是多余条件哦。",
+    "blanks": [ { "id": "a", "suffix": "个", "answers": ["3"] } ],
+    "feedback": { "correct": "很好！27÷9＝3（个），篮球是干扰条件。", "incorrect": "分的是足球 27 个，27÷9。" },
+    "explanation": "27÷9＝3（个）。45个篮球是多余信息。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": false },
+    "score": 5
+  },
+  "p15": {
+    "stepId": "p15",
+    "type": "matching",
+    "prompt": "为每道小题选择合适条件并连线：",
+    "material": [
+      "选择合适的条件，并列式计算（在横线上填写正确的字母）",
+      "A：每只奶牛一天共生产5千克牛奶",
+      "B：每只牛头上都有2只角",
+      "C：池塘里原来有2朵荷花和4片荷叶，后来又长出来了3片荷叶",
+      "(1) 奶牛一天共生产20千克牛奶，＿＿，牧场里有多少头奶牛？",
+      "(2) ＿＿，每片荷叶上有2只青蛙，池塘里现在有多少只青蛙？"
+    ],
+    "left": [
+      { "id": "q1", "text": "① 奶牛一天共产20千克牛奶，＿＿，牧场有多少头奶牛？" },
+      { "id": "q2", "text": "② ＿＿，每片荷叶上有2只青蛙，池塘现在有多少只青蛙？" }
+    ],
+    "right": [
+      { "id": "A", "text": "A 每只奶牛一天产5千克牛奶" },
+      { "id": "B", "text": "B 每只牛头上都有2只角" },
+      { "id": "C", "text": "C 池塘里原来有2朵荷花和4片荷叶，后来又长出来了3片荷叶" }
+    ],
+    "correct": { "q1": "A", "q2": "C" },
+    "feedback": { "correct": "连对了！①20÷5＝4 头；②（4＋3）×2＝14 只。", "incorrect": "B 和青蛙、奶牛头数都没关系，是干扰项。" },
+    "explanation": "① 用 A：20÷5＝4（头）；② 用 C：荷叶共 4＋3＝7 片，7×2＝14（只）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": true },
+    "score": 5
+  },
+  "p16": {
+    "stepId": "p16",
+    "type": "fill-blank",
+    "prompt": "汤圆：大毛5个、二毛3个、锅中8个、盘里7个，其余6包每包6个。一共多少个汤圆？",
+    "material": [
+      "大毛煮汤圆：大毛碗里有5个，二毛碗里有3个，锅里有8个，盘里有7个，其余装了6包，每包6个。",
+      "一共有多少个汤圆？"
+    ],
+    "blanks": [ { "id": "a", "suffix": "个", "answers": ["59"] } ],
+    "feedback": { "correct": "厉害！5＋3＋8＋7＋6×6＝23＋36＝59（个）。", "incorrect": "先算 6 包：6×6＝36，再加上散的 5＋3＋8＋7。" },
+    "explanation": "6×6＝36，5＋3＋8＋7＝23，一共 36＋23＝59（个）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": false },
+    "score": 5
+  },
+  "p18": {
+    "stepId": "p18",
+    "type": "fill-blank",
+    "prompt": "宠物店里狗粮每袋9元，大毛要去买4袋狗粮，小朋友快帮大毛算一算4袋狗粮需要花多少元?",
+    "material": [
+      "宠物店里狗粮每袋9元，大毛要去买4袋狗粮，小朋友快帮大毛算一算4袋狗粮需要花多少元?"
+    ],
+    "blanks": [ { "id": "a", "suffix": "元", "answers": ["36"] } ],
+    "feedback": { "correct": "对！9×4＝36（元）。", "incorrect": "4 个 9 相加，9×4。" },
+    "explanation": "9×4＝36（元）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": false },
+    "score": 5
+  },
+  "p19": {
+    "stepId": "p19",
+    "type": "fill-blank",
+    "prompt": "小美每天吃5个苹果，妈妈买了20个。还要再买多少个才够吃一星期？",
+    "material": [
+      "小美每天吃5个苹果，妈妈买了20个。",
+      "还要再买多少个才够吃一星期？"
+    ],
+    "hint": "一星期是 7 天。",
+    "blanks": [ { "id": "a", "suffix": "个", "answers": ["15"] } ],
+    "feedback": { "correct": "很棒！5×7－20＝35－20＝15（个）。", "incorrect": "先算一星期要吃 5×7＝35 个，再减去已有的 20 个。" },
+    "explanation": "一星期需 5×7＝35 个，还差 35－20＝15（个）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": false },
+    "score": 5
+  },
+  "p20": {
+    "stepId": "p20",
+    "type": "fill-blank",
+    "prompt": "大毛蒸了40个馒头，每天吃5个。这些馒头够吃几天？",
+    "material": [
+      "大毛蒸了40个馒头，每天吃5个。",
+      "这些馒头够吃几天？"
+    ],
+    "blanks": [ { "id": "a", "suffix": "天", "answers": ["8"] } ],
+    "feedback": { "correct": "对！40÷5＝8（天）。", "incorrect": "看每天吃几个，用除法：40÷5。" },
+    "explanation": "40÷5＝8（天）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": false },
+    "score": 5
+  },
+  "p21": {
+    "stepId": "p21",
+    "type": "fill-blank",
+    "prompt": "文具店采购了9盒彩笔，每盒8支。一共采购了多少支彩笔？",
+    "material": [
+      "文具店采购了9盒彩笔，每盒8支。",
+      "一共采购了多少支彩笔？"
+    ],
+    "blanks": [ { "id": "a", "suffix": "支", "answers": ["72"] } ],
+    "feedback": { "correct": "对！9×8＝72（支）。", "incorrect": "9 个 8，用 9×8。" },
+    "explanation": "9×8＝72（支）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": false },
+    "score": 5
+  },
+  "p22": {
+    "stepId": "p22",
+    "type": "fill-blank",
+    "prompt": "有20个足球和18个篮球，把篮球平均分给6个小组。每组分几个篮球？",
+    "material": [
+      "有20个足球和18个篮球，把篮球平均分给6个小组。",
+      "每组分几个篮球？"
+    ],
+    "hint": "分的是篮球，足球是多余条件。",
+    "blanks": [ { "id": "a", "suffix": "个", "answers": ["3"] } ],
+    "feedback": { "correct": "对！18÷6＝3（个），足球是干扰条件。", "incorrect": "分的是篮球 18 个：18÷6。" },
+    "explanation": "18÷6＝3（个）。20个足球是多余信息。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": false },
+    "score": 5
+  },
+  "p23": {
+    "stepId": "p23",
+    "type": "fill-blank",
+    "prompt": "妈妈买6千克苹果，付给售货员50元，找回2元。每千克苹果多少元？",
+    "material": [
+      "妈妈买6千克苹果，付给售货员50元，找回2元。",
+      "每千克苹果多少元？"
+    ],
+    "blanks": [ { "id": "a", "suffix": "元", "answers": ["8"] } ],
+    "feedback": { "correct": "很棒！（50－2）÷6＝48÷6＝8（元）。", "incorrect": "先算实际花了多少：50－2＝48，再除以 6。" },
+    "explanation": "实际花 50－2＝48 元，48÷6＝8（元）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": false },
+    "score": 5
+  },
+  "p24": {
+    "stepId": "p24",
+    "type": "fill-blank",
+    "prompt": "小朋友们去划船，其中男生14人，女生6人.",
+    "material": [
+      "小朋友们去划船，其中男生14人，女生6人.",
+      "(1)规定一艘船坐4个人，他们需要租几艘船?",
+      "(2)每艘船需要8元，租船一共需要花费多少元?"
+    ],
+    "blanks": [
+      { "id": "b1", "prefix": "(1) ", "suffix": "艘", "answers": ["5"] },
+      { "id": "b2", "prefix": "(2) ", "suffix": "元", "answers": ["40"] }
+    ],
+    "feedback": { "correct": "全对！(1)(14＋6)÷4＝5 艘；(2)5×8＝40 元。", "incorrect": "先算总人数 14＋6＝20，再除以 4；然后 ×8。" },
+    "explanation": "(1)（14＋6）÷4＝20÷4＝5（艘）；(2)5×8＝40（元）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": false },
+    "score": 5
+  },
+  "p25": {
+    "stepId": "p25",
+    "type": "judge",
+    "prompt": "太阳公公天上挂，萝卜长得红又大.",
+    "material": [
+      "太阳公公天上挂，萝卜长得红又大.",
+      "白兔用力拔萝卜，整整拔了四十八.",
+      "四十八个大萝卜，平均装到8个盆.",
+      "每盆装了多少个?回答正确得红花."
+    ],
+    "correct": true,
+    "feedback": { "correct": "回答正确，得红花！48÷8＝6（个）。", "incorrect": "算一算 48÷8 等于几？" },
+    "explanation": "48÷8＝6（个），所以说法正确。",
+    "retryPolicy": { "maxRetries": 2, "autoResetOnFail": false },
+    "score": 5
+  },
+  "p26": {
+    "stepId": "p26",
+    "type": "fill-blank",
+    "prompt": "热心待客雁班长，买来桃子和鸭梨.",
+    "material": [
+      "热心待客雁班长，买来桃子和鸭梨.",
+      "平均分到三个盘，每个盘中一十一.",
+      "鸭梨每天吃两个，正好能吃一星期.",
+      "桃子鸭梨各多少?请你动脑算仔细."
+    ],
+    "hint": "一星期 7 天；总数＝每盘×盘数。",
+    "blanks": [
+      { "id": "tao", "prefix": "桃子", "suffix": "个", "answers": ["19"] },
+      { "id": "li", "prefix": "鸭梨", "suffix": "个", "answers": ["14"] }
+    ],
+    "feedback": { "correct": "太棒了！鸭梨2×7＝14 个，总数11×3＝33 个，桃子33－14＝19 个。", "incorrect": "先算鸭梨 2×7，再算总数 11×3，相减得桃子。" },
+    "explanation": "鸭梨 2×7＝14（个）；总数 11×3＝33（个）；桃子 33－14＝19（个）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": false },
+    "score": 5
+  },
+  "p27": {
+    "stepId": "p27",
+    "type": "fill-blank",
+    "prompt": "热心待客雁班长，买来桃子和鸭梨.",
+    "material": [
+      "热心待客雁班长，买来桃子和鸭梨.",
+      "平均分到三个篮，三篮一共二十七.",
+      "每个篮中梨相等，买来鸭梨二十一.",
+      "每个篮中桃几个?每个篮中多少梨?",
+      "小朋友们细细想，桃子和梨算仔细."
+    ],
+    "hint": "先求桃子总数，再各自除以 3。",
+    "blanks": [
+      { "id": "tao", "prefix": "每篮桃", "suffix": "个", "answers": ["2"] },
+      { "id": "li", "prefix": "每篮梨", "suffix": "个", "answers": ["7"] }
+    ],
+    "feedback": { "correct": "厉害！桃共27－21＝6 个，每篮桃6÷3＝2 个，每篮梨21÷3＝7 个。", "incorrect": "先算桃子总数：27－21，再各自 ÷3。" },
+    "explanation": "桃子共 27－21＝6 个，每篮桃 6÷3＝2（个）；每篮梨 21÷3＝7（个）。",
+    "retryPolicy": { "maxRetries": 3, "autoResetOnFail": false },
+    "score": 5
+  }
+}

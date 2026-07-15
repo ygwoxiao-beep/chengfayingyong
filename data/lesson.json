@@ -1,0 +1,62 @@
+{
+  "id": "chengchufa-yingyongti-chubu",
+  "title": "乘除法应用题初步",
+  "author": "数海漫游",
+  "version": "1.0.3",
+  "toolVersion": "source-to-scorm-courseware/1.0",
+  "createdAt": "2026-07-14",
+  "updatedAt": "2026-07-15",
+  "scormEdition": "2004",
+  "cover": "assets/pages/page-01.png",
+  "aspectRatio": "16:9",
+  "scoring": {
+    "passScore": 60,
+    "totalQuestions": 22,
+    "weightPerQuestion": 4.5
+  },
+  "reportConfig": {
+    "trackPageView": true,
+    "trackProgress": true,
+    "trackAnswers": true,
+    "trackScore": true,
+    "trackTime": true,
+    "trackCompletion": true
+  },
+  "sections": [
+    { "id": "sec-intro", "title": "封面导入", "pages": ["p01"] },
+    { "id": "sec-mod1", "title": "模块一 · 乘法应用", "pages": ["p02", "p03", "p04", "p05"] },
+    { "id": "sec-mod2", "title": "模块二 · 除法应用", "pages": ["p06", "p07", "p08", "p09"] },
+    { "id": "sec-summary", "title": "知识点睛", "pages": ["p10"] },
+    { "id": "sec-practice1", "title": "大展身手 · 乘法练习", "pages": ["p11", "p12", "p13", "p14", "p15", "p16"] },
+    { "id": "sec-practice2", "title": "厚积薄发 · 除法练习", "pages": ["p17", "p18", "p19", "p20", "p21", "p22", "p23", "p24", "p25", "p26", "p27"] }
+  ],
+  "flow": [
+    { "id": "p01", "index": 1, "title": "封面：乘除法应用题初步", "image": "assets/pages/page-01.png", "kind": "cover", "reveal": true },
+    { "id": "p02", "index": 2, "title": "模块一：乘法应用", "image": "assets/pages/page-02.png", "kind": "divider" },
+    { "id": "p03", "index": 3, "title": "例一：一共有多少只兔子", "image": "assets/pages/page-03.png", "kind": "interaction", "questionRef": "p03" },
+    { "id": "p04", "index": 4, "title": "例二：篮球与鸡腿", "image": "assets/pages/page-04.png", "kind": "interaction", "questionRef": "p04" },
+    { "id": "p05", "index": 5, "title": "例三：选择合适条件", "image": "assets/pages/page-05.png", "kind": "interaction", "questionRef": "p05" },
+    { "id": "p06", "index": 6, "title": "模块二：除法应用", "image": "assets/pages/page-06.png", "kind": "divider" },
+    { "id": "p07", "index": 7, "title": "例四：胡萝卜分兔子", "image": "assets/pages/page-07.png", "kind": "interaction", "questionRef": "p07" },
+    { "id": "p08", "index": 8, "title": "例五：选择合适条件", "image": "assets/pages/page-08.png", "kind": "interaction", "questionRef": "p08" },
+    { "id": "p09", "index": 9, "title": "登峰造极：和尚吃馒头", "image": "assets/pages/page-09.png", "kind": "interaction", "questionRef": "p09" },
+    { "id": "p10", "index": 10, "title": "知识点睛：乘除法应用", "image": "assets/pages/page-10.png", "kind": "interaction", "questionRef": "p10", "reveal": true },
+    { "id": "p11", "index": 11, "title": "大展身手（乘法练习）", "image": "assets/pages/page-11.png", "kind": "divider" },
+    { "id": "p12", "index": 12, "title": "练习1：公园里的花", "image": "assets/pages/page-12.png", "kind": "interaction", "questionRef": "p12" },
+    { "id": "p13", "index": 13, "title": "练习2：小兔摘花", "image": "assets/pages/page-13.png", "kind": "interaction", "questionRef": "p13" },
+    { "id": "p14", "index": 14, "title": "练习3：篮球和足球", "image": "assets/pages/page-14.png", "kind": "interaction", "questionRef": "p14" },
+    { "id": "p15", "index": 15, "title": "练习4：选择合适条件", "image": "assets/pages/page-15.png", "kind": "interaction", "questionRef": "p15" },
+    { "id": "p16", "index": 16, "title": "练习5：煮汤圆", "image": "assets/pages/page-16.png", "kind": "interaction", "questionRef": "p16" },
+    { "id": "p17", "index": 17, "title": "厚积薄发（除法练习）", "image": "assets/pages/page-17.png", "kind": "divider" },
+    { "id": "p18", "index": 18, "title": "练习1：买狗粮", "image": "assets/pages/page-18.png", "kind": "interaction", "questionRef": "p18" },
+    { "id": "p19", "index": 19, "title": "练习2：小美吃苹果", "image": "assets/pages/page-19.png", "kind": "interaction", "questionRef": "p19" },
+    { "id": "p20", "index": 20, "title": "练习3：大毛蒸馒头", "image": "assets/pages/page-20.png", "kind": "interaction", "questionRef": "p20" },
+    { "id": "p21", "index": 21, "title": "练习4：采购彩笔", "image": "assets/pages/page-21.png", "kind": "interaction", "questionRef": "p21" },
+    { "id": "p22", "index": 22, "title": "练习5：分篮球", "image": "assets/pages/page-22.png", "kind": "interaction", "questionRef": "p22" },
+    { "id": "p23", "index": 23, "title": "练习6：买苹果", "image": "assets/pages/page-23.png", "kind": "interaction", "questionRef": "p23" },
+    { "id": "p24", "index": 24, "title": "练习7：划船租船", "image": "assets/pages/page-24.png", "kind": "interaction", "questionRef": "p24" },
+    { "id": "p25", "index": 25, "title": "练习8：白兔拔萝卜", "image": "assets/pages/page-25.png", "kind": "interaction", "questionRef": "p25" },
+    { "id": "p26", "index": 26, "title": "练习9：桃子和鸭梨（分盘）", "image": "assets/pages/page-26.png", "kind": "interaction", "questionRef": "p26" },
+    { "id": "p27", "index": 27, "title": "练习10：桃子和鸭梨（分篮）", "image": "assets/pages/page-27.png", "kind": "interaction", "questionRef": "p27" }
+  ]
+}
