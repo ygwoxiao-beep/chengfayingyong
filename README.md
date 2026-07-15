@@ -34,7 +34,7 @@ git pull
 必须使用 HTTP 服务（不能用 `file://` 直接打开）：
 
 ```bash
-cd "/Users/eeo/肖xiao/cursor/课件/乘除法应用题"
+cd chengfayingyong
 python3 -m http.server 8899
 ```
 
